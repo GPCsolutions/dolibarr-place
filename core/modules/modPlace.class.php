@@ -95,7 +95,7 @@ class modPlace extends DolibarrModules
 			'css' => '/place/css/place.css.php',
 			// Set here all hooks context managed by module
 			'hooks' => array('actioncard','actioncommdao','element_resource'),
-			'resources' => array('place@place','room@place')
+			'resources' => array('place@place','room@place','building@place')
 			// Set here all workflow context managed by module
 			//'workflow' => array('order' => array('WORKFLOW_ORDER_AUTOCREATE_INVOICE'))
 		);

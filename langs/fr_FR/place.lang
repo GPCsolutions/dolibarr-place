@@ -86,6 +86,7 @@ NameOfThePlace=Nom du lieu
 # Bâtiments
 #
 Buildings=Bâtiments
+Building=Bâtiment
 BuildingSingular=Bâtiment
 AddBuilding=Ajouter un bâtiment
 BuildingFormLabel_ref=Repère / nom du bâtiment

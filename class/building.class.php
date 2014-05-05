@@ -270,6 +270,9 @@ class Building extends Place
     			if (strpos($key,'date')) {
     				$sql.= ' AND '.$key.' = \''.$this->db->idate($value).'\'';
     			}
+    			elseif ($key=='t.fk_place') {
+    				$sql.= ' AND '.$key.' = '.$value;
+    			}
     			else {
     				$sql.= ' AND '.$key.' LIKE \'%'.$value.'%\'';
     			}

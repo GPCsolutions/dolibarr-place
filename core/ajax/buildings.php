@@ -56,7 +56,7 @@ if (! empty($id) && ! empty($action) && ! empty($htmlname))
 
 	$return=array();
 
-	$return['value']	= $form->selectrooms($id,'','fk_resource_room',0,'','',0,'',true);
+	$return['value']	= $form->selectbuildings($id,'','fk_resource_building',0,'','',0,'',true);
 	$return['num']		= $form->num;
 	$return['error']	= $form->error;
 
