@@ -95,7 +95,7 @@ class modPlace extends DolibarrModules
 			'css' => '/place/css/place.css.php',
 			// Set here all hooks context managed by module
 			'hooks' => array('actioncard','actioncommdao','element_resource'),
-			'resources' => array('place@place','room@place','building@place')
+			'resources' => array('building@place')
 			// Set here all workflow context managed by module
 			//'workflow' => array('order' => array('WORKFLOW_ORDER_AUTOCREATE_INVOICE'))
 		);
@@ -129,7 +129,19 @@ class modPlace extends DolibarrModules
 					'1',
 					'This is a constant to defined default zoom into link to OSM map',
 					1
-			)
+			),
+			1=>array('RESSOURCE_PLACE_USE_SEARCH_TO_SELECT',
+					'yesno',
+					'1',
+					'use combobox for place',
+					1
+			),
+			2=>array('RESSOURCE_BUILDING_USE_SEARCH_TO_SELECT',
+						'yesno',
+						'1',
+						'use combobox for building',
+						1
+				),
 
 		);
 
