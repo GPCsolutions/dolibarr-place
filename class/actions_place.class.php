@@ -98,13 +98,15 @@ class ActionsPlace
         			$out .= '<tr class="liste_titre"><td colspan="4">'.$langs->trans('Resources').'</td></tr>';
 	        		foreach($object->linkedResources as $obj_type => $resource_array)
 	        		{
-	        			$out.= '<tr><td>'.$langs->trans(ucfirst($obj_type)).'</td>';
-	        			$out.= '<td colspan="3">';
-	        			foreach($resource_array as $resource)
-	        			{
-	        				$out .= $resource['object']->getNomUrl(1).' ';
+	        			if ($obj_type=='building') {
+		        			$out.= '<tr><td>'.$langs->trans(ucfirst($obj_type)).'</td>';
+		        			$out.= '<td colspan="3">';
+		        			foreach($resource_array as $resource)
+		        			{
+		        				$out .= $resource['object']->getNomUrl(1).' ';
+		        			}
+		        			$out.= '</td></tr>';
 	        			}
-	        			$out.= '</td></tr>';
 	        		}
         		}
         	}
