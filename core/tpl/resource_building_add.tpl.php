@@ -35,7 +35,7 @@ if (GETPOST('fk_resource_place','int') > 0)
 else
 {
 	$events=array();
-	$events[]=array('method' => 'getBuildings', 'url' => dol_buildpath('/place/core/ajax/buildings.php',1), 'htmlname' => 'fk_resource_buildings', 'params' => array());
+	$events[]=array('method' => 'getBuildings', 'url' => dol_buildpath('/place/core/ajax/buildings.php',1), 'htmlname' => 'fk_resource_building', 'params' => array());
 	$out .= $formplace->select_place_list('','fk_resource_place','',1,1,0,$events);
 }
 
@@ -58,7 +58,7 @@ $dateurl='';
 if (!empty($act->date_start)) {
 	$dateurl='&datemonth='.dol_print_date($act->date_start,'%m').'&dateday='.dol_print_date($act->date_start,'%d').'&dateyear='.dol_print_date($act->date_start,'%Y');
 }
-print '<iframe seamless allow-scripts height="300px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?optioncss=print'.$dateurl.'"></iframe>';
+print '<iframe seamless allow-scripts height="400px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1'.$dateurl.'"></iframe>';
 
 $out .='</form>';
 $out .= '</div>';

@@ -104,7 +104,7 @@ if( (array) $linked_resources && count($linked_resources) > 0)
 	if (!empty($act->date_start)) {
 		$dateurl='&datemonth='.dol_print_date($act->date_start,'%m').'&dateday='.dol_print_date($act->date_start,'%d').'&dateyear='.dol_print_date($act->date_start,'%Y');
 	}
-	print '<iframe seamless allow-scripts height="300px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1&'.$dateurl.'"></iframe>';
+	print '<iframe seamless allow-scripts height="350px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1&'.$dateurl.'"></iframe>';
 
 
 

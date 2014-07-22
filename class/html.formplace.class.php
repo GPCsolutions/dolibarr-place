@@ -141,7 +141,7 @@ class FormPlace
     	// On recherche les societes
     	$sql = "SELECT p.rowid, p.ref";
     	$sql.= " FROM ".MAIN_DB_PREFIX ."place as p";
-    	$sql.= " WHERE (p.entity IN (".getEntity('resource', 1).")";
+    	$sql.= " WHERE p.entity IN (".getEntity('resource', 1).")";
     	if ($filter) $sql.= " AND (".$filter.")";
     	//if (!$user->rights->societe->client->voir && !$user->societe_id) $sql.= " AND s.rowid = sc.fk_soc AND sc.fk_user = " .$user->id;
     	//if (! empty($conf->global->COMPANY_HIDE_INACTIVE_IN_COMBOBOX)) $sql.= " AND s.status<>0 ";
