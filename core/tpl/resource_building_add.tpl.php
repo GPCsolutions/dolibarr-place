@@ -58,7 +58,7 @@ $dateurl='';
 if (!empty($act->date_start)) {
 	$dateurl='&datemonth='.dol_print_date($act->date_start,'%m').'&dateday='.dol_print_date($act->date_start,'%d').'&dateyear='.dol_print_date($act->date_start,'%Y');
 }
-print '<iframe seamless allow-scripts height="400px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1'.$dateurl.'"></iframe>';
+print '<iframe seamless allow-scripts height="500px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1'.$dateurl.'"></iframe>';
 
 $out .='</form>';
 $out .= '</div>';
