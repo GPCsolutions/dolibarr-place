@@ -10,7 +10,7 @@ if(!class_exists('FormPlace'))
 	dol_include_once('/place/class/html.formplace.class.php');
 $formplace = new FormPlace($db);
 
-$out .= '<div class="tagtable centpercent border allwidth">';
+$out = '<div class="tagtable centpercent border allwidth">';
 
 $out .= '<form action="'.$_SERVER["PHP_SELF"].'" method="POST">';
 $out .= '<input type="hidden" name="token" value="'.$_SESSION['newtoken'].'">';
@@ -48,17 +48,15 @@ $out .= '</div>';
 /*$out .= '<div><label>'.$langs->trans('Busy').'</label> '.$form->selectyesno('busy',$linked_resource['busy']?1:0,1).'</div>';
 $out .= '<div><label>'.$langs->trans('Mandatory').'</label> '.$form->selectyesno('mandatory',$linked_resource['mandatory']?1:0,1).'</div>';*/
 $out .= '<div>';
-$out .='<input type="submit" id="add-resource-building" class="button" value="'.$langs->trans("Add").'"';
-$out .=' />';
+$out .='<input type="submit" id="add-resource-building" class="button" value="'.$langs->trans("Add").'" />';
 $out .='<input type="submit" name="cancel" class="button" value="'.$langs->trans("Cancel").'" />';
-
 $out .= '</div>';
 
 $dateurl='';
 if (!empty($act->date_start)) {
 	$dateurl='&datemonth='.dol_print_date($act->date_start,'%m').'&dateday='.dol_print_date($act->date_start,'%d').'&dateyear='.dol_print_date($act->date_start,'%Y');
 }
-print '<iframe seamless allow-scripts height="500px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1'.$dateurl.'"></iframe>';
+$out .= '<iframe seamless allow-scripts height="500px" width="100%" src="'.dol_buildpath('/resource/resource_planning.php',1).'?nomenu=1'.$dateurl.'"></iframe>';
 
 $out .='</form>';
 $out .= '</div>';
