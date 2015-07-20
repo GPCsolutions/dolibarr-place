@@ -108,6 +108,10 @@ if ($action == 'update' && ! $_POST["cancel"]  && $user->rights->place->write )
 		$action='edit';
 	}
 }
+if ($action=='delete') {
+	$object->id=$id;
+	$object->delete($user);
+}
 
 
 
@@ -217,6 +221,14 @@ if($object->fetch($id) > 0)
 		{
 			print '<div class="inline-block divButAction">';
 			print '<a href="'.$_SERVER['PHP_SELF'].'?id='.$id.'&amp;action=edit" class="butAction">'.$langs->trans('Edit').'</a>';
+			print '</div>';
+		}
+		
+		// Edit building
+		if($user->rights->place->write)
+		{
+			print '<div class="inline-block divButAction">';
+			print '<a href="'.$_SERVER['PHP_SELF'].'?id='.$id.'&amp;action=delete" class="butAction">'.$langs->trans('Delete').'</a>';
 			print '</div>';
 		}
 
