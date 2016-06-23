@@ -53,10 +53,11 @@ if (! empty($id) && ! empty($action) && ! empty($htmlname))
 		require_once '../../class/html.formplace.class.php';
 
 	$form = new FormPlace($db);
-
+	$langs->load('place@place');
+	
 	$return=array();
 
-	$return['value']	= $form->selectbuildings($id,'','fk_resource_building',0,'','',0,'',true);
+	$return['value']	= $form->selectbuildings($id,'','fk_resource_building',99,'','',0,'',true);
 	$return['num']		= $form->num;
 	$return['error']	= $form->error;
 

@@ -211,12 +211,22 @@ class ActionsPlace
 				$error = $number_resources = 0;
 				
 				foreach ( $resources as $resource_element => $resource_id ) {
-					if ($element && $resource_id > 0) {
-						$res = $resource_stat->add_element_resource($element_id, $element, $resource_id, $resource_element, $busy, $mandatory);
-						if ($res > 0) {
-							$number_resources ++;
-						} else {
-							$error ++;
+					$TResourceId = explode(',', $resource_id);
+					if (!empty($TResourceId)) {
+						foreach ($TResourceId as $id)
+						{
+							if ($element && $id > 0) {
+								
+								$res = $resource_stat->add_element_resource($element_id, $element, $id, $resource_element, $busy, $mandatory);
+								if ($res > 0) {
+									$number_resources ++;
+								} else {
+									$error ++;
+								}
+							} else {
+								setEventMessage('ErrorNoId', 'errors');
+								$error ++;
+							}
 						}
 					} else {
 						setEventMessage('ErrorNoId', 'errors');

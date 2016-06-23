@@ -95,7 +95,7 @@ BuildingFormLabel_lng=Longitude
 BuildingCreatedWithSuccess=Bâtiment ajouté
 BuildingPlaceName=Nom du lieu
 BuildingList=Liste des bâtiments
-
+Building_select_all_buildings=Tous les bâtiments
 #
 # Etages
 #
