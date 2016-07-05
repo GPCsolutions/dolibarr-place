@@ -42,7 +42,7 @@ else
 $out .= '</div>';
 $out .= '<div>'.$langs->trans("Buildings").'</div>';
 $out .= '<div>';
-$out .= $formplace->selectbuildings(GETPOST('fk_resource_building','int'),GETPOST('fk_resource_building'),'fk_resource_building',1);
+$out .= $formplace->selectbuildings(GETPOST('fk_resource_building','int'),GETPOST('fk_resource_building'),'fk_resource_building',98);
 $out .= '</div>';
 
 /*$out .= '<div><label>'.$langs->trans('Busy').'</label> '.$form->selectyesno('busy',$linked_resource['busy']?1:0,1).'</div>';

@@ -94,6 +94,7 @@ BuildingCreatedWithSuccess=Building sucessfully added
 BuildingPlaceName=Location
 BuildingList=Buildings list
 NoBuildingForThisPlace=No building for that place
+Building_select_all_buildings=All buildings
 
 #
 # Etages

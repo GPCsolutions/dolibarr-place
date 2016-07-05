@@ -378,8 +378,11 @@ class FormPlace
     		}
     
     		if ($htmlname != 'none' || $options_only) $out.= '<select class="flat'.($moreclass?' '.$moreclass:'').'" id="'.$htmlname.'" name="'.$htmlname.'">';
-    		if ($showempty == 1) $out.= '<option value="0"'.($selected=='0'?' selected="selected"':'').'></option>';
+    		if ($showempty == 1 || $showempty == 98) $out.= '<option value="0"'.($selected=='0'?' selected="selected"':'').'></option>';
     		if ($showempty == 2) $out.= '<option value="0"'.($selected=='0'?' selected="selected"':'').'>'.$langs->trans("Internal").'</option>';
+			
+			if ($showempty == 98 || $showempty == 99) $out .= '<option value="@all@">'.$langs->trans('Building_select_all_buildings').'</option>';
+			
     		$num = $this->db->num_rows($resql);
     		$i = 0;
     		if ($num)
@@ -387,13 +390,13 @@ class FormPlace
     			if(!class_exists("Building"))
     				require_once 'building.class.php';
     			$buildingstatic=new Building($this->db);
-    
+    			$TRowid = array();
     			while ($i < $num)
     			{
     				$obj = $this->db->fetch_object($resql);
     
     				$buildingstatic->id=$obj->rowid;
-    
+    				$TRowid[] = $obj->rowid;
     
     				if ($htmlname != 'none')
     				{
@@ -439,6 +442,8 @@ class FormPlace
     			$out.= '</select>';
     		}
     
+			if ($showempty == 98 || $showempty == 99) $out = str_replace('@all@', implode(',', $TRowid), $out);
+	
     		$this->num = $num;
     		return $out;
     	}
